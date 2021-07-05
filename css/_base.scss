@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap");
+@import "grid.scss";
+
+//base code scss
+$font-stack: "Open Sans", sans-serif;
+
+//colors
+$primary-color: #6e4b87;
+$secundary-color: #422755;
+$color-red: #f04837;
+$color-yellow: #feaf3d;
+$color-grey-dark: #414141;
+$color-white: #fff;
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin button-base($bg-color) {
+  background: $bg-color;
+  display: inline-flex;
+  position: relative;
+  height: $button-height;
+  border: none;
+  vertical-align: middle;
+  border-radius: 8px;
+  position: absolute;
+  width: 197px;
+  height: 38px;
+ 
+  &:hover {
+    background: darken($bg-color, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg-color, 25%);
+  }
+}
+
+body {
+  background-color:$color-white;
+  font-family: $font-stack;
+}
+
+//grids
+
+.container {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.row {
+  box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+//buttons
+$button-height: 38px;
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+}
+
+.btn {
+  // color:white;
+  text-decoration: none;
+  // padding:9px 73.02px;
+  // border-radius:3px;
+  font-family: $font-stack;
+
+  color: $color-white;
+  width: 197px;
+  height: 38px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 47px;
+  cursor: pointer;
+  
+  
+}
+.btn-primary {
+  @include button-base($primary-color);
+}
+
+.justify-content-center{
+  @include flexbox();
+  justify-content: center;
+  
+}

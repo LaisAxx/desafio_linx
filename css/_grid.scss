@@ -1,0 +1,20 @@
+//reference
+//https://share.atelie.software/criando-um-grid-com-sass-em-dois-minutos-951ca3c06495
+
+$grid-gutter: 16px;
+$grid-columns: 12;
+$grid-max: 1004px;
+
+[class*="grid-"]{
+  float: left;
+  padding: 0 $grid-gutter;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+@for $i from 1 through $grid-columns{
+  .grid-#{$i}{
+    width: 100% / $grid-columns * $i
+  }
+}
+
