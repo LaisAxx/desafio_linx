@@ -10,9 +10,16 @@
 
 ## Como Utilizar
 
-instale o Sass
+instale o Sass.
 
 `npm install sass`
+
+
+## Pré-Processamento
+a partir do terminal utilize o comando sass input.scss output.css para compilar o styles.scss para styles.css.
+para assistir os arquivos utilize o sinalizador --watch.
+
+`sass --watch css/styles.scss:css/styles.css`
 
 
 ## Servidor de Desenvolvimento
@@ -28,16 +35,21 @@ instale o Live-Server para executar a página no seu navegador web. O live-serve
 │   ├── image 3.png
 │   ├── logo.png
 │   └── rectangle.png
+├── build
+│   └── css
+│       ├── index.css
+│       └── index.css.map
 ├── css
 │   ├── _base.scss
 │   ├── _grid.scss
-│   ├── index.css
-│   ├── index.css.map
-│   └── index.scss
+│   ├── styles.css
+│   ├── styles.css.map
+│   └── styles.scss
 ├── index.html
 └── readme.md
 
 4 directories, 12 files
+
 ```
 
 
