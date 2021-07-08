@@ -1,20 +1,95 @@
 //reference
 //https://share.atelie.software/criando-um-grid-com-sass-em-dois-minutos-951ca3c06495
-
-$grid-gutter: 16px;
+// 
+// $grid-columns: 12;
+// // $grid-max: 1004px;
+// [class*="grid-"] {
+//     float: left;
+//     padding: 0 $grid-gutter;
+//     margin-bottom: 20px;
+//     box-sizing: border-box;
+// }
+// @for $i from 1 through $grid-columns {
+//     .grid-#{$i} {
+//         width: 100% / $grid-columns * $i
+//     }
+// }
+//screens grid
 $grid-columns: 12;
-$grid-max: 1004px;
-
-[class*="grid-"]{
-  float: left;
-  padding: 0 $grid-gutter;
-  margin-bottom: 20px;
-  box-sizing: border-box;
+$grid-gutter:16px;
+$grid-max-width: 1150px; //breakpoint-small
+$breakpoint-small: "only screen and (min-width: 0px)";
+$breakpoint-medium:"only screen and (min-width: 768px)";
+$breakpoint-large:"only screen and (min-width: 1008px)";
+$breakpoint-xl:"only screen and (min-width: 1300px)";
+.container {
+    width: 100%;
+    margin: 0 auto;
+    ;
 }
 
-@for $i from 1 through $grid-columns{
-  .grid-#{$i}{
-    width: 100% / $grid-columns * $i
-  }
+.row {
+    padding-bottom: 20px;
 }
 
+.container:after,
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 0 $grid-gutter;
+    width: 100%;
+    display: inline-block;
+}
+
+@media #{$breakpoint-small} {
+    .container {
+        width: 95%;
+        max-width: $grid-max-width;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-sm-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+}
+
+@media #{$breakpoint-medium} {
+    .container {
+        width: 100%;
+        max-width: $grid-max-width;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-md-#{$i} {
+            width: 95% / $grid-columns * $i;
+        }
+    }
+}
+
+@media #{$breakpoint-large} {
+    .container {
+        width: 95%;
+        max-width: $grid-max-width;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-lg-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+}
+
+@media #{$breakpoint-xl} {
+    .container {
+        width: 95%;
+        max-width: $grid-max-width;
+    }
+    @for $i from 1 through $grid-columns {
+        .col-xl-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+}

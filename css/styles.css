@@ -608,7 +608,11 @@ body {
     text-align: center;
   }
   header p {
-    display: none;
+    top: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
   }
 
   #search-box {
@@ -687,7 +691,6 @@ body {
     flex-direction: row;
   }
   #search-box .search-select .select {
-    box-sizing: border-box;
     width: 100%;
     height: 34px;
     padding-left: 1px;
@@ -706,6 +709,7 @@ body {
     background-repeat: no-repeat;
     background-position-x: 70px;
     background-position-y: 5px;
+    box-sizing: border-box;
   }
   #search-box .search-select option {
     position: absolute;
@@ -860,8 +864,10 @@ body {
     display: -webkit-flex;
     display: flex;
     justify-content: center;
+    position: absolute;
     background-color: #6e4b87;
     height: 126px;
+    width: 100%;
     margin-top: 34px;
   }
   footer p {
@@ -1179,8 +1185,8 @@ body {
   .info img {
     margin-right: 54px;
     margin-top: 120px;
-    max-width: 234;
-    max-height: 100;
+    max-width: 234px;
+    max-height: 100%;
     width: auto;
     height: auto;
   }
@@ -1191,7 +1197,7 @@ body {
     height: 190px;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 0.87em;
     line-height: 19px;
     color: #414141;
   }

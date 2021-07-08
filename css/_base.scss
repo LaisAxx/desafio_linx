@@ -1,112 +1,124 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap");
 @import "grid.scss";
-
-//base code scss
-$font-stack: "Open Sans", sans-serif;
-
-//colors
-$primary-color: #6e4b87;
-$secundary-color: #422755;
+//variables
+$primary-color:#6e4b87;
+$secundary-color:#422755;
 $color-red: #f04837;
 $color-yellow: #feaf3d;
 $color-grey-dark: #414141;
 $color-white: #fff;
-
+$font-family-open-sans: "Open Sans";
+//mixins
 @mixin flexbox {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
 @mixin button-base($bg-color) {
-  background: $bg-color;
-  display: inline-flex;
-  position: relative;
-  height: $button-height;
-  border: none;
-  vertical-align: middle;
-  border-radius: 8px;
-  position: absolute;
-  width: 197px;
-  height: 38px;
- 
-  &:hover {
-    background: darken($bg-color, 8%);
-    transition: all 0.3s ease;
-  }
-  &:active {
-    background: darken($bg-color, 25%);
-  }
+    background: $bg-color;
+    display: inline-flex;
+    position: relative;
+    height: $button-height;
+    border: none;
+    vertical-align: middle;
+    border-radius: 8px;
+    position: absolute;
+    width: 197px;
+    height: 38px;
+    &:hover {
+        background: darken($bg-color, 8%);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    &:active {
+        background: darken($bg-color, 25%);
+    }
 }
 
+@mixin form {
+    textarea:focus,
+    input:focus,
+    select:focus {
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+    }
+}
+
+//screens size
+// Breakpoints are defined as a map of (name: minimum width),order from small to large: //
+//    (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$xs-screen:0;
+$sm-screen:576px;
+$md-screen:768px;
+$lg-screen:992px;
+$xl-screen:1200px;
 body {
-  background-color:$color-white;
-  font-family: $font-stack;
-}
-
-//grids
-
-.container {
-  width: 1080px;
-  margin: 0 auto;
-}
-
-.row {
-  box-sizing: border-box;
-}
-
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-
-.row:after {
-  clear: both;
+    background-color: $color-white;
+    font-family: $font-family-open-sans;
 }
 
 //buttons
 $button-height: 38px;
-
 * {
-  border: 0;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: $font-stack;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .btn {
-  // color:white;
-  text-decoration: none;
-  // padding:9px 73.02px;
-  // border-radius:3px;
-  font-family: $font-stack;
-
-  color: $color-white;
-  width: 197px;
-  height: 38px;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding-left: 47px;
-  cursor: pointer;
-  
-  
+    @include flexbox();
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    width: 197px;
+    height: 38px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
+
 .btn-primary {
-  @include button-base($primary-color);
+    @include button-base($primary-color);
 }
 
-.justify-content-center{
-  @include flexbox();
-  justify-content: center;
-  
+.btn-red {
+    @include button-base($color-red)
+}
+
+.justify-content-center {
+    @include flexbox();
+    justify-content: center;
+}
+
+//effects
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
 }
