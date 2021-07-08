@@ -17,7 +17,7 @@ instale o Sass.
 
 ## Pré-Processamento
 a partir do terminal utilize o comando sass input.scss output.css para compilar o styles.scss para styles.css.
-para assistir os arquivos utilize o sinalizador --watch.
+Para assistir os arquivos utilize o sinalizador --watch.
 
 `sass --watch css/styles.scss:css/styles.css`
 
