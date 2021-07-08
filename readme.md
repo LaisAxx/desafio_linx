@@ -35,10 +35,6 @@ instale o Live-Server para executar a página no seu navegador web. O live-serve
 │   ├── image 3.png
 │   ├── logo.png
 │   └── rectangle.png
-├── build
-│   └── css
-│       ├── index.css
-│       └── index.css.map
 ├── css
 │   ├── _base.scss
 │   ├── _grid.scss
@@ -48,7 +44,7 @@ instale o Live-Server para executar a página no seu navegador web. O live-serve
 ├── index.html
 └── readme.md
 
-4 directories, 12 files
+2 directories, 10 files
 
 ```
 
